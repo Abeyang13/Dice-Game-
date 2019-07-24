@@ -1,0 +1,10 @@
+
+body{
+	background-image: url(pokemon.jpg);
+}
+
+
+.boxed {
+  border: 1px solid white;
+  border-color: black;
+}
