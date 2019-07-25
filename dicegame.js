@@ -131,7 +131,7 @@ function spellAttack(boss){
  
 	let playerOne = 200;
 	let count = 1;
-	let boss = 150;
+	let boss = 200;
 	let exitBool = true;
 
 
@@ -139,7 +139,7 @@ function spellAttack(boss){
 		//user selects which attack to use picking from 3 button of Attack,HeavyAttack, or Spell
 			let again = true;
 		while(again && exitBool){
-			let playerOneInput = prompt("PlayerOne choose an attack!! Attack, HeavyAttack,SpellAttack, or Exit to Exit game");
+			let playerOneInput = prompt("PlayerOne choose an attack!! Attack, HeavyAttack,SpellAttack, or Exit to exit game");
 			switch(playerOneInput){
 				case "Attack": 
 			 		boss = (attack(boss));
@@ -159,12 +159,15 @@ function spellAttack(boss){
 					break;				
 				}
 			}
-		// return boss -= Player1Damage  
+		// return boss -= Player1Damage 
+		if(exitBool === false){
+		return ("Exit Game")
+	 	}
+		// exit game
 		if (boss <= 0){
 			break;
 		}
-			// end game}
-
+			// end game
 		// boss damage phase
 		let bossIndex =  20;
 		let bossIndex1 = roll(bossIndex);
@@ -176,7 +179,6 @@ function spellAttack(boss){
 			playerOne -= (bossDamage);
 		}
 		// return player1 =- bossDamage
-
 		// boss regenrate health phase
 		if(count == 7 || count == 14){
 			let bossRegenerate = 10;
@@ -185,7 +187,7 @@ function spellAttack(boss){
 			}
 			count++;
 	}
-
+	
 	if(playerOne>0){
 		return ("Winner");
 	}
